@@ -30,31 +30,6 @@ function handleSubmit(event) {
         }
     }
 
-    // polarity checker
-    const polarity = (score) => {
-        let result
-        switch (score){
-            case 'P+':
-                result = 'strong positive';
-                break;
-            case 'P':
-                result = 'positive';
-                break;
-            case 'NEW':
-                result = 'neutral';
-                break;
-            case 'N':
-                result = 'negative';
-                break;
-            case 'N+':
-                result = 'strong negative';
-                break;
-            case 'NONE':
-                result = 'no sentiment';
-        }
-        return result.toUpperCase();
-    }
-
     // check what text was put into the form field
     let userUrl = document.getElementById('url').value
     
@@ -63,11 +38,11 @@ function handleSubmit(event) {
         .then(data => {
             console.log(data)
             // display data into html
-            document.getElementById('polarity').innerHTML = 'Polarity: '+polarity(data.score_tag)
-            document.getElementById("agreement").innerHTML = `Agreement: ${data.agreement}`
-            document.getElementById("subjectivity").innerHTML = `Subjectivity: ${data.subjectivity}`
-            document.getElementById("confidence").innerHTML = `Confidence: ${data.confidence}`
-            document.getElementById("irony").innerHTML = `Irony: ${data.irony}`
+            document.getElementById('polarity').innerHTML = data.score_tag
+            document.getElementById("agreement").innerHTML = data.agreement
+            document.getElementById("subjectivity").innerHTML = data.subjectivity
+            document.getElementById("confidence").innerHTML = data.confidence
+            document.getElementById("irony").innerHTML = data.irony
         })
         .catch(err => {
             console.log(err)

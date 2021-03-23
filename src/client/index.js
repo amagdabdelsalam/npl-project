@@ -1,4 +1,5 @@
 import { handleSubmit } from './js/formHandler'
+import 'bootstrap'
 
 import './styles/resets.scss'
 import './styles/base.scss'

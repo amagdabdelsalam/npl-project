@@ -11,33 +11,47 @@
             <div class="logo">
                 <h3>Evaluate News NPL</h3>
             </div>
-            <div class="">
-                <p>about</p>
-            </div>
         </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="url" type="text" name="url" value="" placeholder="url">
-                    <input class="btn" type="submit" name="" value="submit">
+                  <div class="form-group">
+                    <input class="form-control" id="url" type="text" name="url" value="" placeholder="url">
+                    <input class="btn btn-success" type="submit" name="" value="Submit">
+                  </div>
                 </form>
             </section>
 
             <section>
                 <strong>Form Results:</strong>
                 <div id="results">
-                    <p id="polarity"></p>
-                    <p id="agreement"></p>
-                    <p id="subjectivity"></p>
-                    <p id="confidence"></p>
-                    <p id="irony"></p>
+                    <table class="table table-borderless">
+                        <thead class="font-weight-bold">
+                          <tr>
+                            <th scope="col">Polarity</th>
+                            <th scope="col">Agreement</th>
+                            <th scope="col">Subjectivity</th>
+                            <th scope="col">Confidence</th>
+                            <th scope="col">Irony</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td id="polarity">...</td>
+                            <td id="agreement">...</td>
+                            <td id="subjectivity">...</td>
+                            <td id="confidence">...</td>
+                            <td id="irony">...</td>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>Enjoy</p>
         </footer>
         <script>
             // Check that service workers are supported
