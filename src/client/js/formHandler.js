@@ -59,7 +59,7 @@ function handleSubmit(event) {
     let userUrl = document.getElementById('url').value
     
     if (isURL(userUrl)) {
-        reqApi('/api', {url: userUrl})
+        reqApi('http://localhost:8080/api', {url: userUrl})
         .then(data => {
             console.log(data)
             // display data into html
